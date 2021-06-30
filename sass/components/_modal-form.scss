@@ -1,0 +1,221 @@
+.modal-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: $titles;
+
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.modal-form {
+  position: absolute;
+  top: 75px;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 1.167;
+    margin-bottom: 4px;
+    letter-spacing: 0.01em;
+    color: $links;
+  }
+
+  &__area {
+    position: relative;
+  }
+
+  &__icon {
+    width: 18px;
+    height: 18px;
+    z-index: 2;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    fill: $black;
+    transition: $transition;
+  }
+
+  &__input {
+    width: 448px;
+    height: 40px;
+    z-index: 1;
+    position: relative;
+    border: $borderform;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.143;
+    letter-spacing: 0.01em;
+    color: $black;
+    padding-left: 36px;
+    transition: border-color $transition;
+  }
+
+  &__area:hover > &__icon,
+  &__area:focus > &__icon,
+  &__area:hover > &__input,
+  &__area:focus > &__input,
+  .comment {
+    fill: $blue-accent;
+    border-color: $blue-accent;
+  }
+
+  &__input:focus {
+    border-color: $blue-accent;
+    outline: none;
+  }
+
+  &__label-checkbox:checked + .checkbox {
+    background: rgb(0, 174, 255);
+  }
+}
+
+.comment {
+  border: $borderform;
+  border-radius: 4px;
+  height: 120px;
+  width: 448px;
+  margin-bottom: 20px;
+  resize: none;
+  overflow: auto;
+  padding: 12px 16px;
+  color: $black;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.143;
+  letter-spacing: 0.01em;
+  transition: outline $transition;
+  transition: border-color $transition;
+
+  &:hover,
+  &:focus {
+    border-color: $blue-accent;
+    outline: $blue-accent;
+
+    &::placeholder {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 1.143;
+      letter-spacing: 0.01em;
+      color: $comment;
+    }
+  }
+
+  .checkbox-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .checkbox-area > .checkbox {
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+  }
+
+  .checkbox-area > .checkbox-text {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+  }
+
+  .checkbox-area > .checkbox-text::before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 2px solid $black;
+    border-radius: 4px;
+    margin-right: 8px;
+  }
+
+  .checkbox-area > .checkbox:hover + .checkbox-text::before {
+    border-color: $blue-accent;
+    transition: border-color $transition;
+  }
+
+  .checkbox-area > .checkbox:checked + .checkbox-text::before {
+    border-color: $blue-accent;
+    background-image: url(../images/icons/check.svg);
+    background-color: $blue-accent;
+    transition: background-color $transition;
+  }
+
+  .checkbox-text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.714;
+    letter-spacing: 0.03em;
+    margin-left: 7px;
+    color: $links;
+  }
+
+  .checkbox-link {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.714;
+    letter-spacing: 0.03em;
+    margin-left: 7px;
+    color: $blue-accent;
+    text-decoration: underline;
+  }
+
+  .modal-form-button {
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    top: 420px;
+    left: 125px;
+    border: 0;
+    border-radius: 4px;
+    background-color: $blue-accent;
+    transition: background-color $transition;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.875;
+    letter-spacing: 0.06em;
+    color: $white;
+
+    cursor: pointer;
+  }
+
+  .modal-form-button:hover,
+  .modal-button:focus {
+    background-color: $blue-hoverbusiness;
+    box-shadow: $followbuttonshadow;
+    transition: box-shadow $transition;
+    transition: background-color $transition;
+  }
+}

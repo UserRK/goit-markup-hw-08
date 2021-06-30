@@ -1,0 +1,46 @@
+/* about us details (index.html) */
+
+.about-us-details {
+  display: flex;
+  align-items: center;
+  padding-left: 0px;
+  margin: 0;
+
+  &__li {
+    width: 270px;
+  }
+
+  &__li:not(:first-child) {
+    margin-left: 30px;
+  }
+
+  &__symbol {
+    width: 70px;
+    height: 70px;
+  }
+
+  &__symbol--background {
+    background-color: $buttons;
+    border-radius: 4px;
+    width: 270px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  &__titles {
+    font-size: 14px;
+    line-height: 1.172;
+    font-weight: 700;
+  }
+
+  &__p {
+    font-size: 14px;
+    line-height: 1.714;
+    color: $links;
+    margin: 0;
+    padding-top: 10px;
+  }
+}

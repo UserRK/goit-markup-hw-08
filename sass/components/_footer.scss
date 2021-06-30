@@ -1,0 +1,196 @@
+@mixin footer-title {
+  color: $white;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.71;
+  font-style: normal;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer-section {
+  background-color: $dark-background;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* footer navigation */
+
+.footer-nav {
+  &__logo {
+    text-decoration: none;
+    font-family: "Raleway", sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.174;
+    letter-spacing: 0.03em;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  &__logo-link {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  &__logo--color--blue {
+    color: $blue-accent;
+  }
+
+  &__logo--color--white {
+    color: $white;
+  }
+}
+
+.address-footer {
+  font-size: 14px;
+  line-height: 1.714;
+  font-weight: 400;
+  font-style: normal;
+  color: $white;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+
+  &__link {
+    color: $links;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.714;
+    text-decoration: none;
+    font-style: normal;
+  }
+
+  &__link:hover,
+  &__link:focus {
+    color: $blue-accent;
+    transition: color $transition;
+  }
+}
+
+/* footer social (second column) */
+
+.footer-social {
+  margin-left: 70px;
+
+  &__title {
+    @include footer-title;
+  }
+
+  &__ul {
+    display: flex;
+  }
+
+  &__li {
+    display: flex;
+    align-items: center;
+    background-color: $socialbg;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin-right: 0;
+  }
+
+  &__li:not(last-child) {
+    margin-right: 10px;
+  }
+
+  &__li:hover,
+  &__li:focus {
+    background-color: $blue-accent;
+    transition: background-color $transition;
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: center;
+    fill: $white;
+    width: 20px;
+    height: 20px;
+    margin-left: 12px;
+  }
+}
+
+/* footer follow (third column)*/
+
+.footer-follow {
+  margin-left: 93px;
+
+  &__title {
+    @include footer-title;
+  }
+
+  &__ul {
+    display: flex;
+    position: relative;
+  }
+
+  &__button {
+    background-color: $blue-accent;
+    box-shadow: $followbuttonshadow;
+    color: $white;
+    width: 200px;
+    height: 50px;
+    border: 0;
+    border-radius: 4px;
+    margin-left: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.875;
+    display: flex;
+    align-items: center;
+    text-align: start;
+    padding-left: 29px;
+    letter-spacing: 0.06em;
+    position: relative;
+  }
+
+  &__button:hover,
+  &__button:focus {
+    background-color: $blue-hoverbusiness;
+    transition: background-color $transition;
+  }
+
+  &__svg {
+    position: absolute;
+    top: 13px;
+    left: 148px;
+  }
+
+  &__input {
+    width: 358px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    filter: $shadowfollowinput;
+    border-radius: 4px;
+    background-color: transparent;
+
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+    color: $followform;
+    padding-left: 16px;
+
+    &__input::placeholder {
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.03em;
+      color: $followform;
+    }
+
+    &__email {
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.03em;
+      color: $followform;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+$blue-accent: #2196f3;
+$blue-oppasity: rgba(33, 150, 243, 0.9);
+$blue-hoverbusiness: #188ce8;
+$titles: #212121;
+$links: #757575;
+$comment: rgba(117, 117, 117, 0.5);
+$lightgray: #ececec;
+$dark-background: rgb(47, 48, 58);
+$buttons: #f5f4fa;
+$black: #000;
+$white: #ffffff;
+$ultralightgray: #eeeeee;
+$lightgraycutomers: #afb1b8;
+$herocolor: #2f303a, 40%;
+$socialbg: rgba(255, 255, 255, 0.1);
+$shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+  1px 4px 6px rgba(0, 0, 0, 0.16);
+$modalshadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+  0px 2px 1px rgba(0, 0, 0, 0.2);
+$backdrop: rgba(0, 0, 0, 0.5);
+$modalshadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+  0px 2px 1px rgba(0, 0, 0, 0.2);
+$backgroundoverlay: rgba(47, 48, 58, 0.8);
+$followbuttonshadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+$followform: rgba(255, 255, 255, 0.6);
+$shadowfollowinput: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+$transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+$borderform: 1px solid rgba(33, 33, 33, 0.2);
+$borderformfocus: 1px solid #2196f3;
+$portfoliobuttonsshadow: 0 0 5px rgba(51, 49, 49, 0.5);
+$checkshadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+  0px 2px 1px rgba(0, 0, 0, 0.2);
+$backgroundhero: linear-gradient(
+    to right,
+    rgba(47, 48, 58, 0.4),
+    rgba(47, 48, 58, 0.4)
+  ),
+  url("../images/index/officebg.jpg");

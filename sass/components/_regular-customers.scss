@@ -1,0 +1,44 @@
+.regular-customers-title {
+  font-size: 36px;
+  line-height: 1.172;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.regular-customers {
+  display: flex;
+  justify-content: center;
+
+  &__li:not(first-child) {
+    margin-left: 30px;
+  }
+
+  &__a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 170px;
+    height: 92px;
+    color: $lightgraycutomers;
+    border: 1px solid $lightgraycutomers;
+    border-radius: 4px;
+  }
+
+  &__icon {
+    fill: currentColor;
+  }
+  &__icon:hover,
+  &__icon:focus {
+    fill: currentColor;
+    transition: fill $transition;
+  }
+
+  &__a:hover,
+  &__a:focus {
+    color: $blue-accent;
+    border: 1px solid $blue-accent;
+    transition: color $transition;
+    transition: border $transition;
+  }
+}
