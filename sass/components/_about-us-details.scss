@@ -1,17 +1,11 @@
 /* about us details (index.html) */
 
 .about-us-details {
-  display: flex;
-  align-items: center;
   padding-left: 0px;
   margin: 0;
 
   &__li {
-    width: 270px;
-  }
-
-  &__li:not(:first-child) {
-    margin-left: 30px;
+    width: 450px;
   }
 
   &__symbol {
@@ -22,7 +16,7 @@
   &__symbol--background {
     background-color: $buttons;
     border-radius: 4px;
-    width: 270px;
+    width: 450px;
     height: 120px;
     display: flex;
     align-items: center;
@@ -31,6 +25,8 @@
   }
 
   &__titles {
+    display: flex;
+    justify-content: center;
     font-size: 14px;
     line-height: 1.172;
     font-weight: 700;
@@ -41,6 +37,28 @@
     line-height: 1.714;
     color: $links;
     margin: 0;
+    margin-bottom: 30px;
     padding-top: 10px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1200px) {
+  .about-us-details {
+    display: flex;
+    align-items: center;
+
+    &__li {
+      width: 270px;
+    }
+
+    &__li:not(:first-child) {
+      margin-left: 30px;
+    }
   }
 }

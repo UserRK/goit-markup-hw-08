@@ -2,27 +2,36 @@
   font-family: "Roboto", sans-serif;
 }
 
+@mixin hero-txt-mobile {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 1.615;
+
+  text-align: center;
+  letter-spacing: 0.06em;
+}
+
+@mixin hero-txt-wide {
+  font-size: 44px;
+  line-height: 1.364;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+}
+
 .hero {
   box-sizing: border-box;
-  margin: auto;
-  padding-top: 200px;
-  padding-bottom: 200px;
-  width: 1600px;
+  margin: 0 auto;
 
   color: $herocolor;
-  background-color: $dark-background;
-  background-image: $backgroundhero;
   background-repeat: no-repeat;
+  background-position: center;
 
   &__solution {
-    @include roboto;
-    font-size: 44px;
-    line-height: 1.364;
-    font-weight: 900;
     color: $white;
     text-align: center;
     margin-bottom: 30px;
-    letter-spacing: 0.06em;
   }
 
   &__button-container {
@@ -47,5 +56,65 @@
   &__button:focus {
     background-color: $blue-hoverbusiness;
     transition: background-color $transition;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .hero {
+    padding-top: 118px;
+    padding-bottom: 118px;
+    background-image: $backgroundhero-mobile-x1;
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      .hero {
+        background-image: $backgroundhero-mobile-x2;
+      }
+    }
+
+    &__solution {
+      @include hero-txt-mobile;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    padding-top: 118px;
+    padding-bottom: 198px;
+    background-image: $backgroundhero-tablet-x1;
+    width: 1600px;
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      .hero {
+        background-image: $backgroundhero-tablet-x2;
+      }
+    }
+
+    &__solution {
+      @include hero-txt-mobile;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .hero {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-image: $backgroundhero-desktop-x1;
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      .hero {
+        background-image: $backgroundhero-desktop-x2;
+      }
+    }
+    &__solution {
+      @include hero-txt-wide;
+    }
   }
 }

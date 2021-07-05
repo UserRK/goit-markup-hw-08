@@ -1,0 +1,38 @@
+.mobile-menu {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  min-width: 40px;
+  min-height: 40px;
+  padding: 0;
+  z-index: 3;
+  color: black;
+  -webkit-transition: color $transition;
+  transition: color $transition;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu__icon:hover,
+.mobile-menu__icon:focus {
+  fill: $blue-accent;
+  transition: fill $transition;
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+.mobile-menu__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  fill: $black;
+}

@@ -9,6 +9,28 @@
   margin-bottom: 20px;
 }
 
+@mixin footer-logo-mobile {
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.167;
+  letter-spacing: 0.03em;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+@mixin footer-logo-wide {
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.174;
+  letter-spacing: 0.03em;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
 .footer-section {
   background-color: $dark-background;
   padding-top: 60px;
@@ -16,20 +38,16 @@
 }
 
 .footer {
-  display: flex;
-  justify-content: space-between;
+  text-align: center;
 }
 
 /* footer navigation */
 
 .footer-nav {
+  padding-bottom: 60px;
+
   &__logo {
-    text-decoration: none;
-    font-family: "Raleway", sans-serif;
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1.174;
-    letter-spacing: 0.03em;
+    @include footer-logo-mobile;
     padding: 0;
     margin-bottom: 20px;
   }
@@ -77,14 +95,14 @@
 /* footer social (second column) */
 
 .footer-social {
-  margin-left: 70px;
-
   &__title {
     @include footer-title;
   }
 
   &__ul {
     display: flex;
+    justify-content: center;
+    padding-bottom: 60px;
   }
 
   &__li {
@@ -120,15 +138,17 @@
 /* footer follow (third column)*/
 
 .footer-follow {
-  margin-left: 93px;
-
   &__title {
     @include footer-title;
   }
 
   &__ul {
-    display: flex;
     position: relative;
+  }
+
+  &__li {
+    display: flex;
+    justify-content: center;
   }
 
   &__button {
@@ -159,6 +179,8 @@
   }
 
   &__svg {
+    width: 24px;
+    height: 24px;
     position: absolute;
     top: 13px;
     left: 148px;
@@ -178,6 +200,7 @@
     letter-spacing: 0.03em;
     color: $followform;
     padding-left: 16px;
+    margin-bottom: 20px;
 
     &__input::placeholder {
       font-size: 16px;
@@ -191,6 +214,32 @@
       line-height: 20px;
       letter-spacing: 0.03em;
       color: $followform;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1200px) {
+  .footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer-nav {
+    &__logo {
+      @include footer-logo-wide;
+    }
+  }
+  .footer-social {
+    margin-left: 70px;
+  }
+
+  .footer-follow {
+    margin-left: 93px;
+
+    &__ul {
+      display: flex;
     }
   }
 }

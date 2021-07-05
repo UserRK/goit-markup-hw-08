@@ -1,6 +1,15 @@
 /* header */
 @mixin logo-font {
   font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.167;
+  letter-spacing: 0.03em;
+}
+
+@mixin logo-font-wide {
+  font-family: "Raleway", sans-serif;
   font-size: 26px;
   font-weight: 700;
   line-height: 1.174;
@@ -27,106 +36,153 @@
 
 .header {
   border-bottom: 1px solid $lightgray;
-  padding-top: 24px;
-  padding-bottom: 25px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  position: relative;
 }
 
 .navigation {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin: 0;
-
   &__logo {
     @include logo-font;
   }
-
   &__logo--color--blue {
     color: $blue-accent;
   }
-
   &__logo--color--black {
     color: $black;
   }
 }
 
-.nav-links {
-  display: flex;
-  margin-left: 93px;
-
-  &__link:hover,
-  &__link:focus {
-    color: $blue-accent;
-    transition: color $transition;
+@media screen and (min-width: 480px) {
+  .nav-links,
+  .nav-contacts {
+    display: none;
   }
+}
 
-  &__item {
+@media screen and (min-width: 768px) {
+  .header {
+    border-bottom: 1px solid $lightgray;
+    padding-top: 24px;
+    padding-bottom: 25px;
     position: relative;
   }
-
-  &__item:nth-child(2),
-  &__item:nth-child(3) {
-    margin-left: 50px;
-  }
-
-  &__link {
-    @include nav-link-font;
-  }
-
-  &__link:hover:focus:active {
-    color: $blue-accent;
-    transition: color $transition;
-  }
-}
-
-.pseudo-element:visited {
-  color: $blue-accent;
-}
-
-.pseudo-element:after {
-  position: absolute;
-  left: 0;
-  bottom: -32px;
-  content: "";
-  width: 100%;
-  border: 2px solid;
-  border-radius: 2px;
-  background-color: $blue-accent;
-}
-
-.nav-contacts {
-  display: flex;
-  margin-left: 305px;
-
-  &__item:nth-child(2) {
-    margin-left: 30px;
-  }
-
-  &__icon-mail {
-    height: 12px;
-    width: 16px;
-    margin-right: 10px;
-    fill: currentColor;
-  }
-
-  &__icon-phone {
-    height: 16px;
-    width: 10px;
-    margin-right: 10px;
-    fill: currentColor;
-  }
-
-  &__contact-link {
+  .navigation {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    margin: 0;
 
-    @include contact-link;
+    &__logo {
+      @include logo-font-wide;
+    }
+
+    &__logo--color--blue {
+      color: $blue-accent;
+    }
+
+    &__logo--color--black {
+      color: $black;
+    }
   }
 
-  &__contact-link:hover,
-  &__contact-link:focus {
+  .navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+
+    &__logo {
+      @include logo-font;
+    }
+
+    &__logo--color--blue {
+      color: $blue-accent;
+    }
+
+    &__logo--color--black {
+      color: $black;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    margin-left: 93px;
+
+    &__link:hover,
+    &__link:focus {
+      color: $blue-accent;
+      transition: color $transition;
+    }
+
+    &__item {
+      position: relative;
+    }
+
+    &__item:nth-child(2),
+    &__item:nth-child(3) {
+      margin-left: 50px;
+    }
+
+    &__link {
+      @include nav-link-font;
+    }
+
+    &__link:hover:focus:active {
+      color: $blue-accent;
+      transition: color $transition;
+    }
+  }
+
+  .pseudo-element:visited {
     color: $blue-accent;
-    transition: color $transition;
+  }
+
+  .pseudo-element:after {
+    position: absolute;
+    left: 0;
+    bottom: -31px;
+    content: "";
+    width: 100%;
+    border: 2px solid;
+    border-radius: 2px;
+    background-color: $blue-accent;
+  }
+
+  .nav-contacts {
+    display: flex;
+    margin-left: 305px;
+
+    &__item:nth-child(2) {
+      margin-left: 30px;
+    }
+
+    &__icon-mail {
+      height: 12px;
+      width: 16px;
+      margin-right: 10px;
+      fill: currentColor;
+    }
+
+    &__icon-phone {
+      height: 16px;
+      width: 10px;
+      margin-right: 10px;
+      fill: currentColor;
+    }
+
+    &__contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include contact-link;
+    }
+
+    &__contact-link:hover,
+    &__contact-link:focus {
+      color: $blue-accent;
+      transition: color $transition;
+    }
   }
 }
