@@ -1,0 +1,140 @@
+/* header */
+.header {
+  border-bottom: 1px solid $lightgray;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  position: relative;
+}
+
+.navigation {
+  @include logo-position;
+
+  &__logo {
+    @include logo-font-mobile;
+  }
+  &__logo--color--blue {
+    color: $blue-accent;
+  }
+  &__logo--color--black {
+    color: $black;
+  }
+}
+
+.nav-links,
+.nav-contacts {
+  display: none;
+}
+
+@media screen and (min-width: 480px) {
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 0;
+  }
+
+  .navigation {
+    @include logo-position;
+
+    &__logo {
+      @include logo-font-desktop;
+      padding-top: 26px;
+      padding-bottom: 26px;
+    }
+
+    &__logo--color--blue {
+      color: $blue-accent;
+    }
+
+    &__logo--color--black {
+      color: $black;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    margin-left: 88px;
+
+    &__link:hover,
+    &__link:focus {
+      color: $blue-accent;
+      transition: color $transition;
+    }
+
+    &__item {
+      position: relative;
+    }
+
+    &__item:nth-child(2),
+    &__item:nth-child(3) {
+      margin-left: 50px;
+    }
+
+    &__link {
+      @include nav-link-font;
+    }
+
+    &__link:hover:focus:active {
+      color: $blue-accent;
+      transition: color $transition;
+    }
+  }
+
+  .pseudo-element:visited {
+    color: $blue-accent;
+  }
+
+  .pseudo-element:after {
+    position: absolute;
+    left: 0;
+    bottom: -33px;
+    content: "";
+    width: 100%;
+    border: 2px solid;
+    border-radius: 2px;
+    background-color: $blue-accent;
+  }
+
+  .nav-contacts {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 15px;
+    top: 21px;
+
+    &__item:first-child {
+      padding-bottom: 10px;
+    }
+
+    &__icon-mail {
+      height: 10px;
+      width: 14px;
+      margin-right: 8px;
+      fill: currentColor;
+    }
+
+    &__icon-phone {
+      height: 14px;
+      width: 10px;
+      margin-right: 8px;
+      fill: currentColor;
+    }
+
+    &__contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+
+      @include contact-link-tablet;
+    }
+
+    &__contact-link:hover,
+    &__contact-link:focus {
+      color: $blue-accent;
+      transition: color $transition;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+}

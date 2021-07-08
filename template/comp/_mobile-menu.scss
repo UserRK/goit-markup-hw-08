@@ -1,0 +1,130 @@
+.mobile-menu {
+  &__container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 48px 40px;
+    text-align: left;
+    background-color: $white;
+    z-index: 999;
+    transform: translateX(100%);
+    transition: $transition;
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__container.is-open {
+    transform: translateX(0);
+  }
+
+  &__button {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    border: none;
+
+    background-color: transparent;
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__icon {
+    fill: $black;
+    width: 40px;
+    height: 40px;
+  }
+
+  &__icon:hover,
+  &__icon:focus,
+  &__icon-close:hover,
+  &__icon-close:focus {
+    fill: $blue-accent;
+    transition: fill $transition;
+  }
+
+  &__button-close {
+    background-color: transparent;
+    border: 0;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+  }
+
+  &__icon-close {
+    fill: $black;
+    width: 19px;
+    height: 19px;
+  }
+
+  &__nav-li:not(:last-child) {
+    padding-bottom: 32px;
+  }
+
+  &__nav-li:last-child {
+    padding-bottom: 302px;
+  }
+
+  &__nav-link {
+    @include mobile-menu-txt;
+    font-size: 40px;
+    line-height: 1.175;
+    color: $black;
+
+    &:hover,
+    &:focus {
+      color: $blue-accent;
+    }
+  }
+
+  &__contacts-li:not(:last-child) {
+    padding-bottom: 32px;
+  }
+
+  &__contacts-li:last-child {
+    padding-bottom: 64px;
+  }
+
+  &__tel {
+    @include mobile-menu-txt;
+    font-size: 40px;
+    line-height: 1.175;
+    color: $blue-accent;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      color: $blue-accent;
+    }
+  }
+
+  &__mail {
+    @include mobile-menu-txt;
+    font-size: 24px;
+    line-height: 1.167;
+    color: $links;
+  }
+
+  &__social-ul {
+    display: flex;
+  }
+
+  &__social-li:not(:first-child) {
+    border-left: 1px solid $social-border;
+    margin-left: 10px;
+    padding-left: 10px;
+  }
+
+  &__social-link {
+    @include mobile-menu-txt;
+    font-size: 18px;
+    line-height: 1.222;
+    color: $blue-accent;
+  }
+}

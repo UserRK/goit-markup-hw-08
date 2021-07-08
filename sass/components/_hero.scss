@@ -1,45 +1,59 @@
-@mixin roboto {
-  font-family: "Roboto", sans-serif;
-}
-
-@mixin hero-txt-mobile {
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 26px;
-  line-height: 1.615;
-
-  text-align: center;
-  letter-spacing: 0.06em;
-}
-
-@mixin hero-txt-wide {
-  font-size: 44px;
-  line-height: 1.364;
-  font-weight: 900;
-  letter-spacing: 0.06em;
-}
-
 .hero {
-  box-sizing: border-box;
+  padding-top: 118px;
+  padding-bottom: 118px;
   margin: 0 auto;
 
-  color: $herocolor;
+  max-width: 1600px;
+  height: 400px;
+
+  text-align: center;
+
   background-repeat: no-repeat;
-  background-position: center;
+  background-size: cover;
+  background-color: $backgroundhero;
+  background-image: $backgroundhero-mob-x1;
 
-  &__solution {
-    color: $white;
-    text-align: center;
-    margin-bottom: 30px;
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: $backgroundhero-mob-x2;
   }
+  @media screen and (min-width: 480px) {
+    background-image: $backgroundhero-tab-x1;
+  }
+  @media (min-device-pixel-ratio: 2) and (min-width: 480px),
+    (min-resolution: 192dpi) and (min-width: 480px),
+    (min-resolution: 2dppx) and (min-width: 480px) {
+    background-image: $backgroundhero-tab-x2;
+  }
+  @media screen and (min-width: 768px) {
+    background-image: $backgroundhero-pc-x1;
+  }
+  @media (min-device-pixel-ratio: 2) and (min-width: 768px),
+    (min-resolution: 192dpi) and (min-width: 768px),
+    (min-resolution: 2dppx) and (min-width: 768px) {
+    background-image: $backgroundhero-pc-x2;
+  }
+  @media screen and (min-width: 1200px) {
+    height: 600px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+  &__solution {
+    margin-bottom: 30px;
 
+    @include hero-txt-mobile;
+    color: $white;
+
+    @media screen and (min-width: 1200px) {
+      @include hero-txt-wide;
+    }
+  }
   &__button-container {
     text-align: center;
   }
-
   &__button {
-    @include roboto;
+    font-family: "Roboto", sans-serif;
     background-color: $blue-accent;
     color: $white;
     font-size: 16px;
@@ -50,71 +64,10 @@
     border-radius: 5px;
     padding: 10px 32px;
     cursor: pointer;
-  }
 
-  &__button:hover,
-  &__button:focus {
-    background-color: $blue-hoverbusiness;
-    transition: background-color $transition;
-  }
-}
-
-@media screen and (min-width: 480px) {
-  .hero {
-    padding-top: 118px;
-    padding-bottom: 118px;
-    background-image: $backgroundhero-mobile-x1;
-
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      .hero {
-        background-image: $backgroundhero-mobile-x2;
-      }
-    }
-
-    &__solution {
-      @include hero-txt-mobile;
-    }
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .hero {
-    padding-top: 118px;
-    padding-bottom: 198px;
-    background-image: $backgroundhero-tablet-x1;
-    width: 1600px;
-
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      .hero {
-        background-image: $backgroundhero-tablet-x2;
-      }
-    }
-
-    &__solution {
-      @include hero-txt-mobile;
-    }
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .hero {
-    padding-top: 200px;
-    padding-bottom: 200px;
-    background-image: $backgroundhero-desktop-x1;
-
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      .hero {
-        background-image: $backgroundhero-desktop-x2;
-      }
-    }
-    &__solution {
-      @include hero-txt-wide;
+    &:hover:focus {
+      background-color: $blue-hoverbusiness;
+      transition: background-color $transition;
     }
   }
 }

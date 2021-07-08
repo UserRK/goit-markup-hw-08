@@ -33,6 +33,7 @@
 
 .footer-section {
   background-color: $dark-background;
+  color: $white;
   padding-top: 60px;
   padding-bottom: 60px;
 }
@@ -219,12 +220,32 @@
 }
 
 @media screen and (min-width: 768px) {
+  .footer {
+    &__ul {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__li:nth-child(2) {
+      margin-left: 165px;
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .footer {
+    &__ul {
+      display: flex;
+      justify-content: center;
+    }
+  }
 }
 
 @media screen and (min-width: 1200px) {
   .footer {
     display: flex;
     justify-content: space-between;
+    text-align: left;
   }
   .footer-nav {
     &__logo {

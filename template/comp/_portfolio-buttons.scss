@@ -1,0 +1,39 @@
+.project-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  margin-bottom: 50px;
+  margin-top: 0;
+  padding-top: 0;
+
+  &__li:not(first-child) {
+    margin-left: 8px;
+  }
+
+  &__li:first-child {
+    margin-bottom: 15px;
+  }
+
+  &__button {
+    @include portfolio-buttons-txt;
+    text-align: center;
+    background-color: $buttons;
+    color: $titles;
+    border: 0;
+    border-radius: 5px;
+    padding: 6px 22px;
+    cursor: pointer;
+    transition: background-color $transition;
+    transition: color $transition;
+  }
+
+  &__button:hover,
+  &__button:focus {
+    background-color: $blue-accent;
+    color: $white;
+    box-shadow: $portfoliobuttonsshadow;
+    transition: box-shadow $transition;
+    transition: background-color $transition;
+    transition: color $transition;
+  }
+}

@@ -37,39 +37,41 @@ $backgroundhero: linear-gradient(
   ),
   url("../images/index/officebg.jpg");
 
-$backgroundhero-mobile-x1: linear-gradient(
+$backgroundhero-mob-x1: linear-gradient(
     to right,
     rgba(47, 48, 58, 0.4),
     rgba(47, 48, 58, 0.4)
   ),
   url("../images/index/officebg-mob-x1.jpg");
-$backgroundhero-mobile-x2: linear-gradient(
+$backgroundhero-mob-x2: linear-gradient(
     to right,
     rgba(47, 48, 58, 0.4),
     rgba(47, 48, 58, 0.4)
   ),
   url("../images/index/officebg-mob-x2.jpg");
-$backgroundhero-tablet-x1: linear-gradient(
+$backgroundhero-tab-x1: linear-gradient(
     to right,
     rgba(47, 48, 58, 0.4),
     rgba(47, 48, 58, 0.4)
   ),
   url("../images/index/officebg-tab-x1.jpg");
-$backgroundhero-tablet-x2: linear-gradient(
+$backgroundhero-tab-x2: linear-gradient(
     to right,
-    rgba(47, 48, 58, 0.4),
+    rgba(20, 21, 39, 0.4),
     rgba(47, 48, 58, 0.4)
   ),
   url("../images/index/officebg-tab-x2.jpg");
-$backgroundhero-desktop-x1: linear-gradient(
+$backgroundhero-pc-x1: linear-gradient(
     to right,
     rgba(47, 48, 58, 0.4),
     rgba(47, 48, 58, 0.4)
   ),
   url("../images/index/officebg-desktop-x1.jpg");
-$backgroundhero-desktop-x2: linear-gradient(
+$backgroundhero-pc-x2: linear-gradient(
     to right,
     rgba(47, 48, 58, 0.4),
     rgba(47, 48, 58, 0.4)
   ),
-  url("../images/index/officebg-desktop-x1.jpg");
+  url("../images/index/officebg-desktop-x2.jpg");
+
+$social-border: rgba(33, 33, 33, 0.2);

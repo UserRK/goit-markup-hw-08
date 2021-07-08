@@ -1,49 +1,21 @@
-/* header */
-@mixin logo-font {
-  font-family: "Raleway", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 1.167;
-  letter-spacing: 0.03em;
-}
-
-@mixin logo-font-wide {
-  font-family: "Raleway", sans-serif;
-  font-size: 26px;
-  font-weight: 700;
-  line-height: 1.174;
-  letter-spacing: 0.03em;
-}
-
-@mixin nav-link-font {
-  text-decoration: none;
-  color: $titles;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.172;
-  letter-spacing: 0.02em;
-}
-
-@mixin contact-link {
-  color: $links;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.172;
-  text-decoration: none;
-  letter-spacing: 0.02em;
-}
-
 .header {
   border-bottom: 1px solid $lightgray;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  position: relative;
+
+  @media screen and (max-width: 767px) {
+    position: relative;
+  }
 }
 
 .navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+
   &__logo {
-    @include logo-font;
+    @include logo-font-mobile;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
   &__logo--color--blue {
     color: $blue-accent;
@@ -53,37 +25,14 @@
   }
 }
 
-@media screen and (min-width: 480px) {
-  .nav-links,
-  .nav-contacts {
-    display: none;
-  }
+.nav-links,
+.nav-contacts {
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
   .header {
-    border-bottom: 1px solid $lightgray;
-    padding-top: 24px;
-    padding-bottom: 25px;
-    position: relative;
-  }
-  .navigation {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 0;
-
-    &__logo {
-      @include logo-font-wide;
-    }
-
-    &__logo--color--blue {
-      color: $blue-accent;
-    }
-
-    &__logo--color--black {
-      color: $black;
-    }
+    padding: 0;
   }
 
   .navigation {
@@ -93,7 +42,9 @@
     margin: 0;
 
     &__logo {
-      @include logo-font;
+      @include logo-font-desktop;
+      padding-top: 26px;
+      padding-bottom: 26px;
     }
 
     &__logo--color--blue {
@@ -107,7 +58,7 @@
 
   .nav-links {
     display: flex;
-    margin-left: 93px;
+    margin-left: 88px;
 
     &__link:hover,
     &__link:focus {
@@ -125,7 +76,8 @@
     }
 
     &__link {
-      @include nav-link-font;
+      @include link-font-14;
+      color: $titles;
     }
 
     &__link:hover:focus:active {
@@ -141,16 +93,77 @@
   .pseudo-element:after {
     position: absolute;
     left: 0;
-    bottom: -31px;
+    bottom: -33px;
     content: "";
     width: 100%;
     border: 2px solid;
     border-radius: 2px;
     background-color: $blue-accent;
+
+    @media screen and (min-width: 1200px) {
+      bottom: -27px;
+    }
   }
 
   .nav-contacts {
     display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 15px;
+    top: 21px;
+
+    &__item:first-child {
+      padding-bottom: 10px;
+    }
+
+    &__icon-mail {
+      height: 10px;
+      width: 14px;
+      margin-right: 8px;
+      fill: currentColor;
+    }
+
+    &__icon-phone {
+      height: 14px;
+      width: 10px;
+      margin-right: 8px;
+      fill: currentColor;
+    }
+
+    &__contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+
+      @include contact-link-tablet;
+    }
+
+    &__contact-link:hover,
+    &__contact-link:focus {
+      color: $blue-accent;
+      transition: color $transition;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .navigation {
+    align-items: baseline;
+
+    &__logo {
+      @include logo-font-desktop;
+      padding-top: 25px;
+      padding-bottom: 24px;
+    }
+  }
+
+  .nav-links {
+    margin-left: 93px;
+  }
+
+  .nav-contacts {
+    flex-direction: row;
+    position: static;
     margin-left: 305px;
 
     &__item:nth-child(2) {
@@ -176,7 +189,8 @@
       align-items: center;
       justify-content: center;
 
-      @include contact-link;
+      @include link-font-14;
+      color: $links;
     }
 
     &__contact-link:hover,

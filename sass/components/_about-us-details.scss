@@ -1,64 +1,54 @@
-/* about us details (index.html) */
-
 .about-us-details {
-  padding-left: 0px;
-  margin: 0;
+  //   @extend %list;
 
-  &__li {
-    width: 450px;
+  @media screen and (max-width: 767px) {
+    margin-bottom: -30px;
+  }
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
   }
 
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &__li {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 30px;
+    }
+  }
   &__symbol {
     width: 70px;
     height: 70px;
   }
-
   &__symbol--background {
-    background-color: $buttons;
-    border-radius: 4px;
-    width: 450px;
+    display: flex;
     height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-bottom: 30px;
-  }
-
-  &__titles {
-    display: flex;
     justify-content: center;
-    font-size: 14px;
-    line-height: 1.172;
-    font-weight: 700;
+    align-items: center;
+
+    background: $buttons;
+    border-radius: 4px;
+  }
+  &__titles {
+    margin-top: 0;
+    margin-bottom: 10px;
+    @include about-us-titles;
+
+    @media screen and(max-width:767px) {
+      text-align: center;
+    }
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      justify-content: start;
+    }
   }
 
   &__p {
-    font-size: 14px;
-    line-height: 1.714;
-    color: $links;
-    margin: 0;
-    margin-bottom: 30px;
-    padding-top: 10px;
-  }
-}
-
-@media screen and (min-width: 480px) {
-}
-
-@media screen and (min-width: 768px) {
-}
-
-@media screen and (min-width: 1200px) {
-  .about-us-details {
-    display: flex;
-    align-items: center;
-
-    &__li {
-      width: 270px;
-    }
-
-    &__li:not(:first-child) {
-      margin-left: 30px;
-    }
+    @include about-us-p;
   }
 }

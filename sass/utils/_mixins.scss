@@ -1,0 +1,157 @@
+@mixin mobile-menu-button {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+@mixin mobile-menu-txt {
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+@mixin contact-link-tablet {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.167;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: $links;
+}
+
+@mixin logo-font-mobile {
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.167;
+  letter-spacing: 0.03em;
+}
+
+@mixin logo-font-desktop {
+  font-family: "Raleway", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.174;
+  letter-spacing: 0.03em;
+}
+
+@mixin link-font-14 {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.172;
+  letter-spacing: 0.02em;
+}
+
+@mixin hero-txt-mobile {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 1.615;
+
+  text-align: center;
+  letter-spacing: 0.06em;
+}
+
+@mixin hero-txt-wide {
+  font-size: 44px;
+  line-height: 1.364;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+}
+
+@mixin about-us-titles {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 1.172;
+  font-weight: 700;
+}
+
+@mixin about-us-p {
+  font-size: 14px;
+  line-height: 1.714;
+  color: $links;
+  margin: 0;
+  margin-bottom: 30px;
+  padding-top: 10px;
+}
+
+@mixin our-team-txt-mobile {
+  font-size: 16px;
+  line-height: 1.188;
+  letter-spacing: 0.03em;
+}
+
+@mixin our-team-main-title-mobile {
+  font-size: 28px;
+  line-height: 1.179;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
+  letter-spacing: 0.03em;
+}
+
+@mixin our-team-main-title-wide {
+  font-size: 36px;
+  line-height: 1.122;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
+  letter-spacing: 0.03em;
+}
+
+@mixin our-team-card-title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.186;
+
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+@mixin checkbox-txt {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1.714;
+  letter-spacing: 0.03em;
+}
+
+@mixin form-input {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.143;
+  letter-spacing: 0.01em;
+}
+
+@mixin form-title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1.167;
+  letter-spacing: 0.01em;
+  color: $links;
+  margin-bottom: 4px;
+}
+
+@mixin form-comment {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.143;
+  letter-spacing: 0.01em;
+}

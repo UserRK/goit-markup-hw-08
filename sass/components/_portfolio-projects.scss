@@ -1,13 +1,8 @@
 .portfolio-pro {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -30px;
-  margin-top: -30px;
-
   &__li {
     flex-basis: calc(100% / 3 - 30px);
-    margin-left: 30px;
-    margin-top: 30px;
+    margin-bottom: 30px;
+    max-width: 450px;
   }
 
   &__li:hover,
@@ -73,5 +68,29 @@
     font-size: 16px;
     line-height: 1.875;
     color: $links;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio-pro {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    margin-top: -30px;
+
+    &__li {
+      flex-basis: calc(100% / 2 - 30px);
+      margin-left: 30px;
+      max-width: 354px;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .portfolio-pro {
+    &__li {
+      flex-basis: calc(100% / 2 - 30px);
+      max-width: 370px;
+    }
   }
 }

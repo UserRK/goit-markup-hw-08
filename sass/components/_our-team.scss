@@ -1,20 +1,9 @@
-@mixin our-team-txt-mobile {
-  font-size: 16px;
-  line-height: 1.188;
-  letter-spacing: 0.03em;
-}
-
 .section-background {
   background-color: $buttons;
 }
 
 .our-team-title {
-  font-size: 28px;
-  line-height: 1.179;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 50px;
-  letter-spacing: 0.03em;
+  @include our-team-main-title-mobile;
 }
 
 .our-team {
@@ -46,32 +35,20 @@
   }
 }
 
-@media screen and (min-width: 480px) {
-}
-
 @media screen and (min-width: 768px) {
+  .our-team {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
   .our-team {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-
-    &__p {
-      font-size: 14px;
-      line-height: 1.172;
-      color: $links;
-      text-align: center;
-      margin-bottom: 16px;
-    }
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .our-team-title {
-    font-size: 36px;
-    line-height: 1.172;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 50px;
+    @include our-team-main-title-wide;
   }
 }

@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.min.css">
-    <link rel="stylesheet" href="./css/modern-normalize.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -18,29 +17,68 @@
     <!-- header-->
     <header class="header">
         <div class="container">
+            <!-- mobile-menu -->
+            <div class="mobile-menu">
+                <button class="mobile-menu__button" type="button" js-open-menu aria-expanded="false"
+                    aria-controls="mobile-menu">
+                    <svg class="mobile-menu__icon">
+                        <use href="./images/icons/icons.svg#icon-menu"></use>
+                    </svg>
+                </button>
+                <div class="mobile-menu__container" js-menu id="mobile-menu">
+                    <button type="button" class="mobile-menu__button-close menu-toggle" js-close-menu>
+                        <svg class="mobile-menu__icon-close">
+                            <use href="./images/icons/icons.svg#icon-close"></use>
+                        </svg>
+                    </button>
+                    <ul class="mobile-menu__nav-ul">
+                        <li class="mobile-menu__nav-li"><a href="./index.html" class="mobile-menu__nav-link">Студия</a></li>
+                        <li class="mobile-menu__nav-li"><a href="./portfolio.html" class="mobile-menu__nav-link">
+                                Портфолио</a></li>
+                        <li class="mobile-menu__nav-li"><a href="#" class="mobile-menu__nav-link"> Контакты</a></li>
+                    </ul>
+                    <ul class="mobile-menu__contacts-ul">
+                        <li class="mobile-menu__contacts-li"><a href="tel:+380961111111" class="mobile-menu__tel">+38 096
+                                111 11 11</a></li>
+                        <li class="mobile-menu__contacts-li"><a href="mailto:info@devstudio.com"
+                                class="mobile-menu__mail">info@devstudio.com</a></li>
+                    </ul>
+                    <ul class="mobile-menu__social-ul">
+                        <li class="mobile-menu__social-li"><a href="#" class="mobile-menu__social-link">Instagram</a></li>
+                        <li class="mobile-menu__social-li"><a href="#" class="mobile-menu__social-link">Twitter</a></li>
+                        <li class="mobile-menu__social-li"><a href="#" class="mobile-menu__social-link">Facebook</a></li>
+                        <li class="mobile-menu__social-li"><a href="#" class="mobile-menu__social-link">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
             <nav class="navigation">
                 <span class="navigation__logo"><a href="./index.html"><span
                             class="navigation__logo--color--blue">Web</span><span
-                            class="navigation__logo--color--black">Studio</span></a></span>
+                            class="navigation__logo--color--black">Studio</span></a>
+                </span>
                 <ul class="nav-links">
-                    <li class="nav-links__item"> <a href="./index.html" class="nav-links__link"> Студия</a>
+                    <li class="nav-links__item">
+                        <a href="./index.html" class="nav-links__link ">Студия</a>
                     </li>
-                    <li class="nav-links__item"> <a href="./portfolio.html" class="nav-links__link pseudo-element"> Портфолио</a></li>
-                    <li class="nav-links__item"> <a href="#" class="nav-links__link"> Контакты</a></li>
+                    <li class="nav-links__item">
+                        <a href="./portfolio.html" class="nav-links__link pseudo-element"> Портфолио</a>
+                    </li>
+                    <li class="nav-links__item">
+                        <a href="#" class="nav-links__link"> Контакты</a>
+                    </li>
                 </ul>
                 <ul class="nav-contacts">
                     <li class="nav-contacts__item mail">
                         <a href="mailto:info@devstudio.com" class="nav-contacts__contact-link">
                             <svg class="nav-contacts__icon-mail">
-                                <use href="./images/icons/icons.svg#icon-envelope" width="16" height="12"></use>
-                            </svg>
-                            info@devstudio.com</a>
+                                <use href="./images/icons/icons.svg#icon-envelope"></use>
+                            </svg>info@devstudio.com</a>
                     </li>
-                    <li class="nav-contacts__item phone"><a href="tel:+380961111111" class="nav-contacts__contact-link">
+                    <li class="nav-contacts__item phone">
+                        <a href="tel:+380961111111" class="nav-contacts__contact-link">
                             <svg class="nav-contacts__icon-phone">
-                                <use href="./images/icons/icons.svg#icon-smartphone" width="10" height="16"></use>
-                            </svg>
-                            +38 096 111 11 11</a>
+                                <use href="./images/icons/icons.svg#icon-smartphone"></use>
+                            </svg>+38 096 111 11 11</a>
                     </li>
                 </ul>
             </nav>
@@ -82,7 +120,12 @@
                     <li class="portfolio-pro__li">
                         <div class="portfolio-card">
                             <div class="portfolio-card__box">
-                                <img src="./images/portfolio/techcrack.jpg" alt="teck crack web site" width="370" class="portfolio-card__img">
+                                <picture>
+                                    <source srcset="./images/portfolio/technokryak-mob-x1.jpg 1x, ./images/portfolio/technokryak-mob-x2.jpg 2x" media="(min-width: 480px)">
+                                    <source srcset="./images/portfolio/technokryak-tab-x1.jpg 1x, ./images/portfolio/technokryak-tab-x2.jpg 2x" media="(min-width: 768px)">
+                                    <source srcset="./images/portfolio/technokryak-pc-x1.jpg 1x, ./images/portfolio/technokryak-pc-x2.jpg 2x" media="(min-width: 1200px)">                                  
+                                    <img src="./images/portfolio/technokryak.jpg" alt="technokryak website" width="450" class="portfolio-card__img">
+                                </picture>
                                 <div>
                                     <p class="portfolio-card__text-overlay">
                                         Технокряк это современная площадка распространения коронавируса.
@@ -99,8 +142,12 @@
                     <li class="portfolio-pro__li">
                         <div class="portfolio-card">
                             <div class="portfolio-card__box">
-                                <img src="./images/portfolio/basketball.jpg" alt="poster New Orlean vs Golden Star" width="370"
-                                    class="portfolio-card__img">
+                                <picture>
+                                    <source srcset="./images/portfolio/star-mob-x1.jpg 1x, ./images/portfolio/star-mob-x2.jpg 2x" media="(min-width: 480px)">
+                                    <source srcset="./images/portfolio/star-tab-x1.jpg 1x, ./images/portfolio/star-tab-x2.jpg 2x" media="(min-width: 768px)">
+                                    <source srcset="./images/portfolio/star-pc-x1.jpg 1x, ./images/portfolio/star-pc-x2.jpg 2x" media="(min-width: 1200px)">
+                                    <img src="./images/portfolio/star.jpg" alt="poster New Orlean vs Golden Star" width="450" class="portfolio-card__img">
+                                </picture>                                
                                 <div>
                                     <p class="portfolio-card__text-overlay">Эпичная баскетбольная битва! Эпичная баскетбольная битва! Эпичная баскетбольная битва! Эпичная баскетбольная битва! Эпичная баскетбольная битва! Эпичная баскетбольная битва! Эпичная баскетбольная битва! Эпичная баскетбольная битва! Эпичная баскетбольная битва!Эпичная баскетбольная битва!Эпичная баскетбольная битва!</p>
                                 </div>
@@ -114,7 +161,13 @@
                     <li class="portfolio-pro__li">
                         <div class="portfolio-card">
                             <div class="portfolio-card__box">
-                                <img src="./images/portfolio/seafood.jpg" alt="Ресторан Seafood" width="370" class="portfolio-card__img">
+                                <picture>
+                                    <source srcset="./images/portfolio/seafood-mob-x1.jpg 1x, ./images/portfolio/seafood-mob-x2.jpg 2x" media="(min-width: 480px)">
+                                    <source srcset="./images/portfolio/seafood-tab-x1.jpg 1x, ./images/portfolio/seafood-tab-x2.jpg 2x" media="(min-width: 768px)">
+                                    <source srcset="./images/portfolio/seafood-pc-x1.jpg 1x, ./images/portfolio/seafood-pc-x2.jpg 2x" media="(min-width: 1200px)">
+                                    <img src="./images/portfolio/seafood.jpg" alt="Ресторан Seafood" width="450" class="portfolio-card__img">
+                                </picture>
+                                
                                 <div>
                                     <p class="portfolio-card__text-overlay">Ресторан seafood это ресторан, которых дофигилиард по всей стране, но
                                         только в этом есть наше приложение!</p>
@@ -129,7 +182,12 @@
                     <li class="portfolio-pro__li">
                         <div class="portfolio-card">
                             <div class="portfolio-card__box">
-                                <img src="./images/portfolio/headphones.jpg" alt="Проект Prime" width="370" class="portfolio-card__img">
+                                <picture>
+                                    <source srcset="./images/portfolio/prime-mob-x1.jpg 1x, ./images/portfolio/prime-mob-x2.jpg 2x" media="(min-width: 480px)">
+                                    <source srcset="./images/portfolio/prime-tab-x1.jpg 1x, ./images/portfolio/prime-tab-x2.jpg 2x" media="(min-width: 768px)">
+                                    <source srcset="./images/portfolio/prime-pc-x1.jpg 1x, ./images/portfolio/prime-pc-x2.jpg 2x" media="(min-width: 1200px)">
+                                    <img src="./images/portfolio/prime.jpg" alt="Проект Prime" width="450" class="portfolio-card__img">
+                                </picture>                             
                                 <div>
                                     <p class="portfolio-card__text-overlay"> Проект prime. Продаем наушники! Кто не покупает наушники тому продаем
                                         курс "как продавать наушники". Всего 9.99!</p>
@@ -144,7 +202,12 @@
                     <li class="portfolio-pro__li">
                         <div class="portfolio-card">
                             <div class="portfolio-card__box">
-                                <img src="./images/portfolio/boxes.jpg" alt="Проект Boxes" width="370" class="portfolio-card__img">
+                                <picture>
+                                    <source srcset="./images/portfolio/boxes-mob-x1.jpg 1x, ./images/portfolio/boxes-mob-x2.jpg 2x" media="(min-width: 480px)">
+                                    <source srcset="./images/portfolio/boxes-tab-x1.jpg 1x, ./images/portfolio/boxes-tab-x2.jpg 2x" media="(min-width: 768px)">
+                                    <source srcset="./images/portfolio/boxes-pc-x1.jpg 1x, ./images/portfolio/boxes-pc-x2.jpg 2x" media="(min-width: 1200px)">
+                                    <img src="./images/portfolio/boxes.jpg" alt="Проект Boxes" width="450" class="portfolio-card__img">
+                                </picture>                               
                                 <div>
                                     <p class="portfolio-card__text-overlay">Международная платформа-букинг для кошек</p>
                                 </div>
@@ -158,8 +221,13 @@
                     <li class="portfolio-pro__li">
                         <div class="portfolio-card">
                             <div class="portfolio-card__box">
-                                <img src="./images/portfolio/inspiration.jpg" alt="Inspiration has no Borders" width="370"
-                                    class="portfolio-card__img">
+                                <picture>
+                                    <source srcset="./images/portfolio/borders-mob-x1.jpg 1x, ./images/portfolio/borders-mob-x2.jpg 2x" media="(min-width: 480px)">
+                                    <source srcset="./images/portfolio/borders-tab-x1.jpg 1x, ./images/portfolio/borders-tab-x2.jpg 2x" media="(min-width: 768px)">
+                                    <source srcset="./images/portfolio/borders-pc-x1.jpg 1x, ./images/portfolio/borders-pc-x2.jpg 2x" media="(min-width: 1200px)">
+                                    <img src="./images/portfolio/borders.jpg" alt="Inspiration has no Borders" width="450" class="portfolio-card__img">
+                                </picture>
+                                
                                 <div>
                                     <p class="portfolio-card__text-overlay">Сайт для вдохновения</p>
                                 </div>
@@ -173,8 +241,12 @@
                     <li class="portfolio-pro__li">
                         <div class="portfolio-card">
                             <div class="portfolio-card__box">
-                                <img src="./images/portfolio/limitededition.jpg" alt="Издание Limited Edition" width="370"
-                                    class="portfolio-card__img">
+                                <picture>
+                                    <source srcset="./images/portfolio/edition-mob-x1.jpg 1x, ./images/portfolio/edition-mob-x2.jpg 2x" media="(min-width: 480px)">
+                                    <source srcset="./images/portfolio/edition-tab-x1.jpg 1x, ./images/portfolio/edition-tab-x2.jpg 2x" media="(min-width: 768px)">
+                                    <source srcset="./images/portfolio/edition-pc-x1.jpg 1x, ./images/portfolio/edition-pc-x2.jpg 2x" media="(min-width: 1200px)">
+                                    <img src="./images/portfolio/edition.jpg" alt="Издание Limited Edition" width="450" class="portfolio-card__img">
+                                </picture>                               
                                 <div>
                                     <p class="portfolio-card__text-overlay">Издание что тут еще скажешь...Издание что тут еще скажешь...Издание что тут еще скажешь...Издание что тут еще скажешь...Издание что тут еще скажешь...Издание что тут еще скажешь...Издание что тут еще скажешь...Издание что тут еще скажешь...Издание что тут еще скажешь...</p>
                                 </div>
@@ -188,7 +260,12 @@
                     <li class="portfolio-pro__li">
                         <div class="portfolio-card">
                             <div class="portfolio-card__box">
-                                <img src="./images/portfolio/lab.jpg" alt="Проект LAB" width="370" class="portfolio-card__img">
+                                <picture>
+                                    <source srcset="./images/portfolio/lab-mob-x1.jpg 1x, ./images/portfolio/lab-mob-x2.jpg 2x" media="(min-width: 480px)">
+                                    <source srcset="./images/portfolio/lab-tab-x1.jpg 1x, ./images/portfolio/lab-tab-x2.jpg 2x" media="(min-width: 768px)">
+                                    <source srcset="./images/portfolio/lab-pc-x1.jpg 1x, ./images/portfolio/lab-pc-x2.jpg 2x" media="(min-width: 1200px)">
+                                    <img src="./images/portfolio/lab.jpg" alt="Проект LAB" width="450" class="portfolio-card__img">
+                                </picture>
                                 <div>
                                     <p class="portfolio-card__text-overlay">Проект LAB</p>
                                 </div>
@@ -202,7 +279,12 @@
                     <li class="portfolio-pro__li">
                         <div class="portfolio-card">
                             <div class="portfolio-card__box">
-                                <img src="./images/portfolio/growingbusiness.jpg" alt="Growing Business" width="370" class="portfolio-card__img">
+                                <picture>
+                                    <source srcset="./images/portfolio/business-mob-x1.jpg 1x, ./images/portfolio/business-mob-x2.jpg 2x" media="(min-width: 480px)">
+                                    <source srcset="./images/portfolio/business-tab-x1.jpg 1x, ./images/portfolio/business-tab-x2.jpg 2x" media="(min-width: 768px)">
+                                    <source srcset="./images/portfolio/business-pc-x1.jpg 1x, ./images/portfolio/business-pc-x2.jpg 2x" media="(min-width: 1200px)">
+                                    <img src="./images/portfolio/business.jpg" alt="Growing Business" width="450" class="portfolio-card__img">
+                                </picture>
                                 <div>
                                     <p class="portfolio-card__text-overlay">Десктопное приложение-симулятор тыканья в экран планшета.</p>
                                 </div>
@@ -304,6 +386,6 @@
 
             </div>
         </footer>
-        <script> src="./js/mobile-menu.js"</script>
+        <script src="./js/mobile-menu.js"></script>
     </body>
 </html>
