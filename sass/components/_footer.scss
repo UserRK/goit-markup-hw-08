@@ -40,6 +40,10 @@
 
 .footer {
   text-align: center;
+  &__ul {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /* footer navigation */
@@ -188,7 +192,7 @@
   }
 
   &__input {
-    width: 358px;
+    width: 450px;
     height: 50px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
@@ -202,6 +206,10 @@
     color: $followform;
     padding-left: 16px;
     margin-bottom: 20px;
+
+    @media screen and (min-width: 1200px) {
+      width: 358px;
+    }
 
     &__input::placeholder {
       font-size: 16px;
@@ -223,6 +231,7 @@
   .footer {
     &__ul {
       display: flex;
+      flex-direction: row;
       justify-content: center;
     }
 
@@ -244,8 +253,11 @@
 @media screen and (min-width: 1200px) {
   .footer {
     display: flex;
-    justify-content: space-between;
     text-align: left;
+
+    &__li:nth-child(2) {
+      margin-left: 0px;
+    }
   }
   .footer-nav {
     &__logo {
